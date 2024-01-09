@@ -6,12 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import Counter from './Counter';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import UserData from './UserData';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <Counter />
+    <UserData />
 
     </Provider>
   </React.StrictMode>
