@@ -10,4 +10,16 @@ const fetchGetUsers = () => {
     });
 };
 
+
+export const addPost = (data)=>{
+  return fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+    .then((response) => response.json())
+    .catch((error) => {
+      throw error;
+    });
+
+}
 export default fetchGetUsers;
