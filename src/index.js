@@ -8,13 +8,19 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import UserData from './UserData';
 import Counter2 from './Counter2';
+import Display from './Display';
+import Button from './Button';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <Counter2 />
 
+
+<Button >This is the change in the data
+<Display />
+
+</Button>
     </Provider>
   </React.StrictMode>
 );
