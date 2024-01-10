@@ -1,24 +1,31 @@
 import React from 'react';
-import {useSelector,useDispatch} from 'react-redux'
+//import {useSelector,useDispatch} from 'react-redux'
+import { connect } from 'react-redux'
+
+
+const mapStateToProps = (state) => { return {
+  count: state.counter
+}}
+
+
+ function Counter({ count, dispatch }) {
+
+   
+
  
-export default function Counter() {
-
-    const d = useSelector(y=>y.counter);
-
-    const dis = useDispatch();
 
     const inc = ()=>{
 
-        dis({type:"INCREMENT_ASYNC"})
+      dispatch({type:"INCREMENT_ASYNC"})
     }
 
     const dec = ()=>{
 
-        dis({type:"DECREMENT_ASYNC"})
+      dispatch({type:"DECREMENT_ASYNC"})
     }
     
   return (
-    <div>{d}
+    <div>{count}
     
         <button onClick={inc}>+</button>
         <button onClick={dec}>-</button>
@@ -26,3 +33,5 @@ export default function Counter() {
     </div>
   )
 }
+
+export default connect(mapStateToProps) (Counter)
