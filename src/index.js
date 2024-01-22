@@ -10,18 +10,23 @@ import UserData from './UserData';
 import Counter2 from './Counter2';
 import Display from './Display';
 import Button from './Button';
+import ListTutotorial from './ListTutotorial';
+import ErrorBoundary from './ErrorBoundary';
+import BuggyCounter from './BuggyCounter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ErrorBoundary>  
     <Provider store={store}>
 
+          <ListTutotorial/>
 
-<Button >This is the change in the data
-<Display />
-
-</Button>
     </Provider>
+
+    <BuggyCounter/>
+
+    </ErrorBoundary>  
   </React.StrictMode>
 );
 
